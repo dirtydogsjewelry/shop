@@ -1,0 +1,458 @@
+/* ======================================================================
+   ROOT / SCALE
+====================================================================== */
+
+:root {
+  --text-main: #111;
+  --text-muted: #555;
+  --bg-main: #fff;
+  --bg-dark: #0f0f0f;
+
+  --radius: 14px;
+  --shadow: 0 12px 32px rgba(0,0,0,.12);
+}
+
+html {
+  font-size: clamp(16px, 0.9vw, 20px); /* КЛЮЧ ДЛЯ 4K */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--text-main);
+  background: var(--bg-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ======================================================================
+   TYPOGRAPHY
+====================================================================== */
+
+h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  margin: 0 0 .75rem;
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ======================================================================
+   LAYOUT
+====================================================================== */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 3vw, 3rem);
+}
+
+section {
+  padding-block: clamp(4rem, 6vw, 8rem);
+}
+
+/* ======================================================================
+   HEADER
+====================================================================== */
+
+.site-header {
+  background: #111;
+  color: #fff;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: clamp(4rem, 6vw, 6rem);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.brand-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-word {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 600;
+}
+
+.brand-logo-wrap {
+  width: clamp(3rem, 4vw, 4.5rem);
+  height: auto;
+}
+
+.brand-logo {
+  width: 100%;
+}
+
+.brand-tagline {
+  font-size: clamp(.9rem, 1vw, 1.1rem);
+  color: #cfcfcf;
+}
+
+.main-nav {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.main-nav a {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  opacity: .85;
+}
+
+.main-nav a:hover {
+  opacity: 1;
+}
+
+/* ======================================================================
+   BRAND / HERO
+====================================================================== */
+
+#brand {
+  min-height: clamp(85vh, 95vh, 100vh);
+  display: grid;
+  place-items: center;
+}
+
+.brand-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 4vw, 5rem);
+  align-items: center;
+}
+
+.brand-left p {
+  max-width: 42ch;
+}
+
+.brand-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* ======================================================================
+   SERVICES / CARDS
+====================================================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(260px, 25vw, 340px), 1fr)
+  );
+  gap: clamp(1.5rem, 2vw, 3rem);
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: clamp(22rem, 26vw, 28rem);
+}
+
+
+
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* КВАДРАТ */
+  object-fit: cover;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 1.5vw, 1.75rem);
+}
+
+
+/* Desktop + 4K — 3 карточки */
+@media (min-width: 1280px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet — 2 карточки */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile — 1 карточка */
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* ======================================================================
+   GOD DOG
+====================================================================== */
+
+.god-dog {
+  min-height: clamp(80vh, 90vh, 100vh);
+  background: var(--bg-dark);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 6rem);
+  padding: clamp(4rem, 6vw, 8rem);
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.god-dog .subtitle {
+  font-size: clamp(1.1rem, 1.4vw, 1.5rem);
+  opacity: .85;
+}
+
+/* ======================================================================
+   PORTFOLIO GRID — BLACK THEME, 4K FRIENDLY
+====================================================================== */
+
+/* Чёрный фон секции */
+.portfolio {
+  background: #101010;
+  padding: clamp(6rem, 4vw, 6rem) 0;
+  color: #fff;
+}
+
+/* Сетка */
+.grid {
+  display: grid;
+  gap: clamp(1.5rem, 2vw, 3rem);
+  width: 100%;
+}
+
+/* Карточка */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111; /* чуть светлее, чтобы отделялась от фона */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Ховер эффект */
+.grid-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+}
+
+/* Картинка */
+.grid-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* единые пропорции на всех разрешениях */
+  object-fit: cover;
+}
+
+/* Подпись */
+.grid-item__caption {
+  padding: clamp(1rem, 1.2vw, 1.5rem);
+  font-size: clamp(1rem, 1.15vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: left;
+  color: #fff;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(15, 15, 15, 0.4),
+    rgba(247, 247, 247, 0.1)
+  );
+}
+
+/* ----------------------------- BREAKPOINTS ---------------------------- */
+
+/* Desktop / 4K */
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================================
+   COLLECTIONS — CLEAN & FIXED
+====================================================================== */
+
+.collections {
+  min-height: clamp(80vh, 90vh, 100vh);
+  display: grid;
+  place-items: center;
+  padding-block: clamp(4rem, 6vw, 8rem);
+}
+
+.collections h2 {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.collections-list {
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  gap: clamp(1.25rem, 2vw, 2rem);
+}
+
+/* ---------- ITEM ---------- */
+
+.collection-item {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  align-items: center;
+
+  padding: clamp(1.25rem, 2vw, 2rem);
+  background: #f8f8f8;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* ---------- NUMBER ---------- */
+
+.collection-num {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- TEXT (STRICT 2 LINES) ---------- */
+
+.collection-text {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+  line-height: 1.4;
+
+  /* ✅ строго 2 строки */
+  height: calc(1.4em * 2);
+  overflow: hidden;
+
+  display: flex;
+  align-items: center; /* ✅ центрируем по вертикали */
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+  .collection-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: .5rem;
+  }
+
+  .collection-text {
+    justify-content: center;
+  }
+}
+
+
+
+/* ======================================================================
+   FOOTER
+====================================================================== */
+
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding-block: clamp(3rem, 4vw, 5rem);
+}
+
+.footer-dog {
+  width: clamp(4rem, 6vw, 7rem);
+  margin: 2rem auto 0;
+}
+
+/* ======================================================================
+   MOBILE
+====================================================================== */
+
+@media (max-width: 768px) {
+  .header-inner,
+  .brand-inner,
+  .god-dog {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ======================================================================
+   4K BONUS
+====================================================================== */
+
+@media (min-width: 2560px) {
+  body {
+    line-height: 1.75;
+  }
+}
