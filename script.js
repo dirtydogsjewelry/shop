@@ -2,26 +2,68 @@
 // Код корректно работает и если Lottie отсутствует (нет ошибок).
 
 const lottie = document.getElementById('dogLottie');
-const fallbackImg = document.getElementById('dogFallback');
+const extraText = document.querySelector('.brand-extra-text');
 
-if (lottie) {
-  // Пример: при клике — воспроизвести одну итерацию
+let lottiePlaying = false;
+let stopTimer = null;
+
+const phrases = [
+  'Ну я же просил...',
+  'Опять ты кликаешь 😐',
+  'Я же собака, не кнопка',
+  'Хватит. Правда.',
+  'Ладно, последний раз'
+];
+
+let phraseIndex = 0;
+
+if (lottie && extraText) {
   lottie.addEventListener('click', () => {
-    // Если анимация в loop, можно временно play() и остановить через timeout, либо убрать loop в markup
+    if (lottiePlaying) return;
+
+    lottiePlaying = true;
+
+    // текст
+    extraText.textContent = phrases[phraseIndex];
+    extraText.classList.add('visible');
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+
+    // анимация
+    lottie.stop();
     lottie.play();
-    setTimeout(() => lottie.stop(), 3000); 
+
+    clearTimeout(stopTimer);
+    stopTimer = setTimeout(() => {
+      lottie.stop();
+      lottiePlaying = false;
+    }, 3000);
   });
 }
+
+
+
 // ==========================
 // LOGO ANIMATION SAFE INIT
 // ==========================
 
-const logo = document.querySelector('.brand-head');
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
 
-if (logo) {
-  logo.addEventListener('click', (e) => {
-    logo.style.animation = 'none';
-    void logo.offsetWidth;
-    logo.style.animation = 'bounce 0.8s ease';
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
+  });
+
+  navItems.forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    });
   });
 }
+
+

@@ -15,185 +15,182 @@
 
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <!-- ЛЕВАЯ ЧАСТЬ: логотип + подпись -->
-    <div class="brand" aria-label="Dirty Dogs brand">
-      <div class="brand-head">
-        <span class="brand-word left">Dirty</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- ЛЕВАЯ ЧАСТЬ: логотип + подпись -->
+      <a href="#home" class="header-logo" aria-label="Dirty Dogs">
+        <img src="Image/DD/Dog_FullLogo.svg" alt="Dirty Dogs">
+      </a>
 
-        <!-- обёртка для svg — позиционируем поверх между словами -->
-        <span class="brand-logo-wrap" aria-hidden="true">
-          <img src="Image/DD/Dog_Emodsi_01.svg" alt="" class="brand-logo">
-        </span>
 
-        <span class="brand-word right">Dogs</span>
-      </div>
+      <!-- ПРАВАЯ ЧАСТЬ: навигация -->
+      <nav class="main-nav" role="navigation">
+        <button class="burger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <div id="TextLogo" class="brand-tagline">
-        Good dogs go to heaven. Dirty dogs go anywhere
-      </div>
-    </div>
-
-    <!-- ПРАВАЯ ЧАСТЬ: навигация -->
-    <nav class="main-nav" role="navigation" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="brand" id="brand">
-  <div class="container brand-inner">
-    <!-- левый блок: текст -->
-    <div class="brand-left">
-      <h2>О бренде</h2>
-      <p>
-        Dirty Dogs — это авторский ювелирный бренд, который стремится передать через свои украшения дух творчества и изысканности. 
-        Мы создаем уникальные изделия, вдохновленныээээ... Нет, мы таким не занимаемся.
-      </p>
-    </div>
-
-  
-    <div class="brand-right">
-        <lottie-player
-        id="dogLottie"
-        src="Image/DD/DD_anim.json"
-        background="transparent"
-        speed="1"
-        loop
-        style="width:100%; height:100%;">
-      </lottie-player>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
 
     </div>
-  </div>
-</section>
+  </header>
 
-
-
-<!-- SERVICES / CARDS -->
-    <section class="services section" aria-label="Services">
-      <div class="container">
-        <h3 class="section-subtitle">Если хотите что-то уникальное:</h3>
-
-        <div class="cards">
-          <article class="card">
-            <div class="card__media">
-              <img src="Image/card/step1.webp" alt="" />
-              <div class="card__num">01</div>
-            </div>
-            <div class="card__body">
-              <h4 class="card__title">Создание эскиза</h4>
-              <p class="card__text">Все начинается с вашей идеи. Мы обсуждаем идеи и рисуем уникальный эскиз.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img src="Image/card/step2.webp" alt="" />
-              <div class="card__num">02</div>
-            </div>
-            <div class="card__body">
-              <h4 class="card__title">Моделирование изделия</h4>
-              <p class="card__text">Создаём 3D модель, чтобы вы могли увидеть изделие до производства.</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__media">
-              <img src="Image/card/step3.webp" alt="" />
-              <div class="card__num">03</div>
-            </div>
-            <div class="card__body">
-              <h4 class="card__title">Литьё модели</h4>
-              <p class="card__text">Переход от модели к реальному украшению — качество и детализация на высоте.</p>
-            </div>
-          </article>
-        </div>
+  <section class="brand" id="brand">
+    <div class="container brand-inner">
+      <!-- левый блок: текст -->
+      <div class="brand-left">
+        <h2>О бренде</h2>
+        <p>
+          Dirty Dogs — это авторский ювелирный бренд, который стремится передать через свои украшения дух творчества и изысканности. 
+          Мы создаем уникальные изделия, вдохновленныээээ... Нет, мы таким не занимаемся. Главное не кликайте собаку!
+        </p>
+        <p class="brand-extra-text"></p>
       </div>
-    </section>
 
-  </div>
-</section>
+    
+      <div class="brand-right">
+          <lottie-player
+          id="dogLottie"
+          src="Image/DD/DD_anim.json"
+          background="transparent"
+          speed="1"
+          loop
+          style="width:100%; height:100%;">
+        </lottie-player>
 
-<section class="god-dog">
-  <div class="god-dog-content">
-    <h2 class="title">GOOD DOG</h2>
-    <p class="subtitle">Almost God. Still a Dog.</p>
-  </div>
-
-  <div class="god-dog-image">
-    <img src="Image/DD/SleepGodDog_02.png" alt="Good Dog Statue">
-  </div>
-</section>
-
-<!-- PORTFOLIO GRID -->
-    <section class="portfolio section" id="work">
-      <div class="container">
-        <h3 class="section-title section-title--dark">Предыдущие работы</h3>
-
-        <div class="grid">
-          <a class="grid-item" href="#">
-            <img src="Image/card/work1.jpg" alt="">
-            <div class="grid-item__caption">God</div>
-          </a>
-          <a class="grid-item" href="#">
-            <img src="Image/card/work2.jpg" alt="">
-            <div class="grid-item__caption">John Mayer NYC</div>
-          </a>
-          <a class="grid-item" href="#">
-            <img src="Image/card/work3.jpg" alt="">
-            <div class="grid-item__caption">Nayzak Patterns</div>
-          </a>
-          <a class="grid-item" href="#">
-            <img src="Image/card/work4.jpg" alt="">
-            <div class="grid-item__caption">Crave Chips</div>
-          </a>
-        </div>
-
-        <div class="view-all">
-          <a href="#" class="btn-link">View all work ↗</a>
-        </div>
       </div>
-    </section>
-<section class="collections">
-  <h2>Коллекции</h2>
-
-  <div class="collections-list">
-
-    <article class="collection-item">
-      <span class="collection-num">01</span>
-      <p class="collection-text">CG и её составляющие</p>
-    </article>
-
-    <article class="collection-item">
-      <span class="collection-num">02</span>
-      <p class="collection-text">IT и 01101001</p>
-    </article>
-
-    <article class="collection-item">
-      <span class="collection-num">03</span>
-      <p class="collection-text">??????</p>
-    </article>
-
-    <article class="collection-item">
-      <span class="collection-num">04</span>
-      <p class="collection-text">??????</p>
-    </article>
-
-  </div>
-</section>
+    </div>
+  </section>
 
 
-<footer id="contact">
-  <h3>Куда писать?</h3>
-  <p>dirtydogsjewelry@gmail.com</p>
-  <img class="footer-dog" src="Image/DD/Dog_Emodsi_01.svg" alt="">
-</footer>
 
-<!-- Скрипты -->
-<script src="script.js"></script>
+  <!-- SERVICES / CARDS -->
+      <section class="services section" aria-label="Services">
+        <div class="container">
+          <h3 class="section-subtitle">Если хотите что-то уникальное:</h3>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card__media">
+                <img src="Image/card/step1.webp" alt="" />
+                <div class="card__num">01</div>
+              </div>
+              <div class="card__body">
+                <h4 class="card__title">Создание эскиза</h4>
+                <p class="card__text">Все начинается с вашей идеи. Мы обсуждаем идеи и рисуем уникальный эскиз.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__media">
+                <img src="Image/card/step2.webp" alt="" />
+                <div class="card__num">02</div>
+              </div>
+              <div class="card__body">
+                <h4 class="card__title">Моделирование изделия</h4>
+                <p class="card__text">Создаём 3D модель, чтобы вы могли увидеть изделие до производства.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card__media">
+                <img src="Image/card/step3.webp" alt="" />
+                <div class="card__num">03</div>
+              </div>
+              <div class="card__body">
+                <h4 class="card__title">Литьё модели</h4>
+                <p class="card__text">Переход от модели к реальному украшению — качество и детализация на высоте.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <section class="god-dog">
+    <div class="god-dog-content">
+      <h2 class="title">GOOD DOG</h2>
+      <p class="subtitle">Almost God. Still a Dog.</p>
+    </div>
+
+    <div class="god-dog-image">
+      <img src="Image/DD/SleepGodDog_02.png" alt="Good Dog Statue">
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+      <section class="portfolio section" id="work">
+        <div class="container">
+          <h3 class="section-title section-title--dark">Предыдущие работы</h3>
+
+          <div class="grid">
+            <a class="grid-item" href="#">
+              <img src="Image/card/work1.jpg" alt="">
+              <div class="grid-item__caption">God</div>
+            </a>
+            <a class="grid-item" href="#">
+              <img src="Image/card/work2.jpg" alt="">
+              <div class="grid-item__caption">John Mayer NYC</div>
+            </a>
+            <a class="grid-item" href="#">
+              <img src="Image/card/work3.jpg" alt="">
+              <div class="grid-item__caption">Nayzak Patterns</div>
+            </a>
+            <a class="grid-item" href="#">
+              <img src="Image/card/work4.jpg" alt="">
+              <div class="grid-item__caption">Crave Chips</div>
+            </a>
+          </div>
+
+          <div class="view-all">
+            <a href="#" class="btn-link">View all work ↗</a>
+          </div>
+        </div>
+      </section>
+  <section class="collections">
+    <h2>Коллекции</h2>
+
+    <div class="collections-list">
+
+      <article class="collection-item">
+        <span class="collection-num">01</span>
+        <p class="collection-text">CG и её составляющие</p>
+      </article>
+
+      <article class="collection-item">
+        <span class="collection-num">02</span>
+        <p class="collection-text">IT и 01101001</p>
+      </article>
+
+      <article class="collection-item">
+        <span class="collection-num">03</span>
+        <p class="collection-text">??????</p>
+      </article>
+
+      <article class="collection-item">
+        <span class="collection-num">04</span>
+        <p class="collection-text">??????</p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <footer id="contact">
+    <h3>Куда писать?</h3>
+    <p>@DirtyDogShops</p>
+    <img class="footer-dog" src="Image/DD/Dog_Emodsi_01.svg" alt="">
+  </footer>
+
+  <!-- Скрипты -->
+  <script src="script.js"></script>
 </body>
 </html>
-

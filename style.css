@@ -1,7 +1,9 @@
 /* ======================================================================
    ROOT / SCALE
 ====================================================================== */
-
+* {
+  outline: 1px solid rgba(255,0,0,.2);
+}
 :root {
   --text-main: #111;
   --text-muted: #555;
@@ -86,7 +88,6 @@ section {
 
 .site-header {
   background: #111;
-  color: #fff;
 }
 
 .header-inner {
@@ -135,11 +136,105 @@ section {
 .main-nav a {
   font-size: clamp(1rem, 1.2vw, 1.25rem);
   opacity: .85;
+  position: relative;
 }
 
 .main-nav a:hover {
   opacity: 1;
 }
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: clamp(15vh, 8vw, 7rem);
+  width: auto;
+}
+
+
+
+
+
+
+/* === BURGER BUTTON === */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  display: block;
+}
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+/* === NAV === */
+.nav-links {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.nav-links a {
+  color: #fff;
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+}
+
+.nav-links.active {
+  transform: translateY(0);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+
 
 /* ======================================================================
    BRAND / HERO
@@ -167,24 +262,41 @@ section {
   justify-content: center;
 }
 
+.brand-extra-text {
+  margin-top: 1rem;
+  font-style: italic;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-extra-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* ======================================================================
    SERVICES / CARDS
 ====================================================================== */
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(260px, 25vw, 340px), 1fr)
-  );
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: clamp(1.5rem, 2vw, 3rem);
 }
 
+
+
 .card {
+  flex: 0 1 340px; /* 🔥 ключевая строка */
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: clamp(22rem, 26vw, 28rem);
 }
+
+
 
 
 
@@ -441,10 +553,9 @@ footer {
     text-align: center;
   }
 
-  .main-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.main-nav {
+  position: relative;
+}
 }
 
 /* ======================================================================
