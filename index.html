@@ -1,196 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dirty Dogs</title>
-  <link rel="icon" href="/Dog_Emodsi_01.ico" type="image/x-icon">
-
-  <!-- Стили -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Lottie -->
-  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="DD — авторские украшения Dirty Dogs. Портфолио и индивидуальные заказы: от эскиза до готового изделия.">
+  <title>DD — Dirty Dogs Jewelry</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./fonts.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./gallery.js" defer></script>
+  <script type="module" src="./rooftop-game.js"></script>
 </head>
-
-<body>
-
+<body id="top">
+  <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header">
-    <div class="container header-inner">
-      <!-- ЛЕВАЯ ЧАСТЬ: логотип + подпись -->
-      <a href="#home" class="header-logo" aria-label="Dirty Dogs">
-        <img src="Image/DD/Dog_FullLogo.svg" alt="Dirty Dogs">
+    <div class="frame header-inner">
+      <a class="brand" href="#top" aria-label="Dirty Dogs Jewelry — на главную">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" aria-hidden="true">DIRTY DOGS<br>JEWELRY</span>
       </a>
-
-
-      <!-- ПРАВАЯ ЧАСТЬ: навигация -->
-      <nav class="main-nav" role="navigation">
-        <button class="burger" aria-label="Open menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div class="nav-links">
-          <a href="#home">Home</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <nav class="header-nav" aria-label="Навигация">
+        <a href="#work">Работы</a>
+        <a href="#about">О бренде</a>
+        <a href="#custom">На заказ</a>
+        <a href="#game">Мини-игра</a>
       </nav>
-
+      <a class="button button-outline header-contact" href="https://t.me/DirtyDogShops">Telegram</a>
     </div>
   </header>
 
-  <section class="brand" id="brand">
-    <div class="container brand-inner">
-      <!-- левый блок: текст -->
-      <div class="brand-left">
-        <h2>О бренде</h2>
-        <p>
-          Dirty Dogs — это авторский ювелирный бренд, который стремится передать через свои украшения дух творчества и изысканности. 
-          Мы создаем уникальные изделия, вдохновленныээээ... Нет, мы таким не занимаемся. Главное не кликайте собаку!
-        </p>
-        <p class="brand-extra-text"></p>
+  <main id="main">
+    <section class="frame hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="spark" aria-hidden="true"></span> Авторские украшения</p>
+        <h1 id="hero-title">Носи<br><span class="hero-accent">своё.</span></h1>
+        <p class="hero-description">Украшения Dirty Dogs для тех, у кого свой почерк.</p>
+        <a class="button button-black" href="#work">Смотреть работы</a>
       </div>
-
-    
-      <div class="brand-right">
-          <lottie-player
-          id="dogLottie"
-          src="Image/DD/DD_anim.json"
-          background="transparent"
-          speed="1"
-          loop
-          style="width:100%; height:100%;">
-        </lottie-player>
-
+      <div class="hero-art">
+        <img src="./assets/dd-mascot.webp" alt="Новый маскот DD в чёрных очках, с кольцом и подвеской на цепи" width="1367" height="1150" fetchpriority="high">
       </div>
-    </div>
-  </section>
+    </section>
 
-
-
-  <!-- SERVICES / CARDS -->
-      <section class="services section" aria-label="Services">
-        <div class="container">
-          <h3 class="section-subtitle">Если хотите что-то уникальное:</h3>
-
-          <div class="cards">
-            <article class="card">
-              <div class="card__media">
-                <img src="Image/card/step1.webp" alt="" />
-                <div class="card__num">01</div>
-              </div>
-              <div class="card__body">
-                <h4 class="card__title">Создание эскиза</h4>
-                <p class="card__text">Все начинается с вашей идеи. Мы обсуждаем идеи и рисуем уникальный эскиз.</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__media">
-                <img src="Image/card/step2.webp" alt="" />
-                <div class="card__num">02</div>
-              </div>
-              <div class="card__body">
-                <h4 class="card__title">Моделирование изделия</h4>
-                <p class="card__text">Создаём 3D модель, чтобы вы могли увидеть изделие до производства.</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card__media">
-                <img src="Image/card/step3.webp" alt="" />
-                <div class="card__num">03</div>
-              </div>
-              <div class="card__body">
-                <h4 class="card__title">Литьё модели</h4>
-                <p class="card__text">Переход от модели к реальному украшению — качество и детализация на высоте.</p>
-              </div>
-            </article>
-          </div>
+    <section class="frame section works" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <h2 id="work-title">Работы DD</h2>
+        <p>Украшения из портфолио Dirty Dogs.</p>
+      </div>
+      <div class="works-carousel">
+        <div class="works-controls" role="group" aria-label="Листать работы" hidden>
+          <button type="button" data-works-direction="-1" aria-controls="works-track" aria-label="Назад"><span aria-hidden="true">Назад</span></button>
+          <button type="button" data-works-direction="1" aria-controls="works-track" aria-label="Дальше"><span aria-hidden="true">Дальше</span></button>
         </div>
-      </section>
-
-    </div>
-  </section>
-
-  <section class="god-dog">
-    <div class="god-dog-content">
-      <h2 class="title">GOOD DOG</h2>
-      <p class="subtitle">Almost God. Still a Dog.</p>
-    </div>
-
-    <div class="god-dog-image">
-      <img src="Image/DD/SleepGodDog_02.png" alt="Good Dog Statue">
-    </div>
-  </section>
-
-  <!-- PORTFOLIO GRID -->
-      <section class="portfolio section" id="work">
-        <div class="container">
-          <h3 class="section-title section-title--dark">Предыдущие работы</h3>
-
-          <div class="grid">
-            <a class="grid-item" href="#">
-              <img src="Image/card/work1.jpg" alt="">
-              <div class="grid-item__caption">Помолвочное кольцо</div>
-            </a>
-            <a class="grid-item" href="#">
-              <img src="Image/card/work2.jpg" alt="">
-              <div class="grid-item__caption">Кольцо Adobe</div>
-            </a>
-            <a class="grid-item" href="#">
-              <img src="Image/card/work3.jpg" alt="">
-              <div class="grid-item__caption">Ae</div>
-            </a>
-            <a class="grid-item" href="#">
-              <img src="Image/card/work4.jpg" alt="">
-              <div class="grid-item__caption">Онфим</div>
-            </a>
-          </div>
-
-          <div class="view-all">
-            <a href="#" class="btn-link">View all work ↗</a>
-          </div>
+        <div class="works-grid" id="works-track">
+          <a class="work-card" href="./assets/work-1.webp">
+            <span class="work-image"><img src="./assets/work-1.webp" alt="Кольцо с прозрачным камнем и переплетёнными линиями на ободе" loading="lazy" width="738" height="1100"></span>
+            <span class="work-caption"><span class="work-title">Помолвочное кольцо</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
+          <a class="work-card" href="./assets/work-2.webp">
+            <span class="work-image"><img src="./assets/work-2.webp" alt="Два кольца с выгравированными сокращениями на ободе" loading="lazy" width="738" height="1100"></span>
+            <span class="work-caption"><span class="work-title">Кольцо Adobe</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
+          <a class="work-card" href="./assets/work-3.webp">
+            <span class="work-image"><img src="./assets/work-3.webp" alt="Кольцо с буквами Ae на круглой площадке" loading="lazy" width="738" height="1100"></span>
+            <span class="work-caption"><span class="work-title">Ae</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
+          <a class="work-card" href="./assets/work-4.webp">
+            <span class="work-image"><img src="./assets/work-4.webp" alt="Широкое кольцо с фигурными прорезями" loading="lazy" width="738" height="1100"></span>
+            <span class="work-caption"><span class="work-title">Онфим</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
+          <a class="work-card" href="./assets/work-troll.webp" data-original="./assets/work-troll-original.webp">
+            <span class="work-image"><img src="./assets/work-troll.webp" alt="Подвеска в виде тролля с высоким рельефным гребнем волос" loading="lazy" width="960" height="1200"></span>
+            <span class="work-caption"><span class="work-title">Подвеска с котом</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
+          <a class="work-card" href="./assets/work-cat.webp" data-original="./assets/work-cat-original.webp">
+            <span class="work-image"><img src="./assets/work-cat.webp" alt="Каплевидная подвеска на цепочке с рельефным портретом кота" loading="lazy" width="960" height="1200"></span>
+            <span class="work-caption"><span class="work-title">Подвеска "Тролль"</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
+          <a class="work-card" href="./assets/work-heraldic.webp" data-original="./assets/work-heraldic-original.webp">
+            <span class="work-image"><img src="./assets/work-heraldic.webp" alt="Две печатки с рельефным гербом, вид спереди и в три четверти" loading="lazy" width="960" height="1200"></span>
+            <span class="work-caption"><span class="work-title">Гербовые печатки</span><span class="plus" aria-hidden="true"></span></span>
+          </a>
         </div>
-      </section>
-  <section class="collections">
-    <h2>Коллекции</h2>
+      </div>
+    </section>
 
-    <div class="collections-list">
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="frame about-inner">
+        <div class="about-copy">
+          <p class="eyebrow"><span class="spark" aria-hidden="true"></span> О бренде</p>
+          <h2 id="about-title" lang="en">GOOD<br>DOG<span class="about-period">.</span></h2>
+          <p class="about-tagline" lang="en">Almost God. Still a Dog.</p>
+          <p class="about-description">Dirty Dogs — авторский ювелирный бренд. В наших работах встречаются графика, цифровая культура и любовь к странным деталям.</p>
+        </div>
+        <div class="about-art">
+          <img src="./assets/good-dog-portrait.webp" alt="Маскот Dirty Dogs в чёрных очках показывает серебристую подвеску" width="1200" height="1200" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-      <article class="collection-item">
-        <span class="collection-num">01</span>
-        <p class="collection-text">CG и её составляющие</p>
-      </article>
+    <section class="frame section custom" id="custom" aria-labelledby="custom-title">
+      <div class="section-heading">
+        <h2 id="custom-title">На заказ</h2>
+        <p>Расскажите о своей идее. Мы пройдём путь от первого эскиза до готового украшения.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-media"><img src="./assets/step-1.webp" alt="Карандашный эскиз кольца с ежом" width="960" height="902" loading="lazy"></div>
+          <div class="step-copy">
+            <h3>Эскиз</h3>
+            <p>Обсуждаем идею и рисуем эскиз будущего украшения.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-media"><img src="./assets/step-2.webp" alt="Трёхмерная модель кольца с ежом" width="960" height="926" loading="lazy"></div>
+          <div class="step-copy">
+            <h3>3D-модель</h3>
+            <p>Показываем форму и детали изделия до производства.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-media"><img src="./assets/step-3.webp" alt="Визуализация кольца с ежом в серебре по 3D-модели" width="960" height="720" loading="lazy"></div>
+          <div class="step-copy">
+            <h3>Литьё</h3>
+            <p>По модели отливаем украшение в металле. На фото — визуализация в серебре.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-      <article class="collection-item">
-        <span class="collection-num">02</span>
-        <p class="collection-text">IT и 01101001</p>
-      </article>
+    <section class="frame game" id="game" aria-labelledby="game-title">
+      <div class="rooftop-stage">
+        <canvas class="rooftop-canvas" width="720" height="1120" tabindex="0"
+          aria-label="Игровое поле" aria-describedby="game-instructions"></canvas>
+        <div class="rooftop-hud" aria-hidden="true">
+          <span id="rooftop-height">0 м</span>
+          <span><i class="rooftop-ring"></i><span id="rooftop-rings">00</span> оч.</span>
+        </div>
+        <img class="rooftop-victory-art" src="./assets/rooftop-victory.webp"
+          alt="DD на крыше смотрит вверх и показывает серебряное кольцо" width="720" height="1120" loading="lazy" hidden>
+        <div class="rooftop-overlay">
+          <p class="rooftop-result" role="status"></p>
+          <button class="button rooftop-start" type="button" hidden>Играть</button>
+          <noscript>Для игры нужен JavaScript.</noscript>
+        </div>
+      </div>
+      <div class="game-copy">
+        <p class="eyebrow"><span class="spark" aria-hidden="true"></span> Мини-игра</p>
+        <h2 id="game-title">Прыжок на крышу</h2>
+        <p id="game-instructions">Доберись до 10 000 м. DD прыгает сам: веди его по крышам и используй цепь-пружину для высокого прыжка.</p>
+        <p class="rooftop-help">Серебряное кольцо даёт 1 очко, золотое — 10. Липкая платформа на мгновение удерживает DD, а затем подбрасывает на один уровень.</p>
+        <p class="rooftop-help">На компьютере — клавиши ← и →. На телефоне — веди пальцем по полю.</p>
+        <img class="rooftop-illustration" src="./assets/rooftop-illustration.webp"
+          alt="DD прыгает с крыши к серебряному кольцу" width="900" height="600" loading="lazy">
+      </div>
+    </section>
 
-      <article class="collection-item">
-        <span class="collection-num">03</span>
-        <p class="collection-text">??????</p>
-      </article>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="frame contact-inner">
+        <div>
+          <h2 id="contact-title">Есть идея?</h2>
+          <p>Напишите нам в Telegram, чтобы обсудить заказ.</p>
+        </div>
+        <a class="button button-black" href="https://t.me/Ivan_Jwr">@Ivan_Jwr</a>
+      </div>
+    </section>
+  </main>
 
-      <article class="collection-item">
-        <span class="collection-num">04</span>
-        <p class="collection-text">??????</p>
-      </article>
-
+  <footer class="site-footer">
+    <div class="frame footer-inner">
+      <a class="brand" href="#top" aria-label="Dirty Dogs Jewelry — наверх">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" aria-hidden="true">DIRTY DOGS<br>JEWELRY</span>
+      </a>
+      <a href="#top" class="to-top">Наверх</a>
     </div>
-  </section>
-
-
-  <footer id="contact">
-    <h3>Куда писать?</h3>
-    <p>@DirtyDogShops</p>
-    <img class="footer-dog" src="Image/DD/Dog_Emodsi_01.svg" alt="">
   </footer>
 
-  <!-- Скрипты -->
-  <script src="script.js"></script>
+  <dialog class="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-top">
+      <h2 id="gallery-title"></h2>
+      <form method="dialog"><button class="gallery-close" aria-label="Закрыть фото" autofocus><span class="plus" aria-hidden="true"></span></button></form>
+    </div>
+    <div class="gallery-stage"><img alt=""></div>
+    <div class="gallery-controls">
+      <button type="button" data-direction="-1">Назад</button>
+      <div class="gallery-details">
+        <span class="gallery-count" aria-live="polite"></span>
+        <a class="gallery-original" target="_blank" rel="noopener" hidden>Исходное фото</a>
+      </div>
+      <button type="button" data-direction="1">Дальше</button>
+    </div>
+  </dialog>
 </body>
 </html>
